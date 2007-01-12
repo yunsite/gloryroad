@@ -1,0 +1,11 @@
+Subject: 您的申请已获得批准
+Charset: utf-8
+
+恭喜您,
+
+你在"{SITENAME}"所申请加入的群组"{GROUP_NAME}", 已经获得批准.
+请利用以下连结去看看您的群组成员吧!
+
+{U_GROUP}
+
+{EMAIL_SIG}

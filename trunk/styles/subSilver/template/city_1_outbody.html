@@ -1,0 +1,135 @@
+<!-- INCLUDE overalllit_header.html -->
+	<!-- $Id: index_body.html,v 1.14 2006/03/12 23:19:54 acydburn Exp $ -->
+	
+
+	<br clear="all" />
+
+	
+	    <table width="100%" cellspacing="1" cellpadding="0" class="city_main">
+      <tr>
+        <td height="181" align="left" valign="top">
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+		<tr>
+			<td height="27" align="center" valign="middle" class="row1">
+				<p style="font-size:14px;color: black;font-weight: bold;white-space: normal;">{CITYNAME} -[<a href="{U_CITYMAIN}">{L_COME_IN_CITY}</a>]</p></td>
+		</tr>
+	</table>
+<br /><div id="workgroup">	<table width="200" border="0" cellspacing="1" cellpadding="0" class="tablebg" style="float:left; margin:2px;">
+          <tr>
+            <td align="left">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="row1">
+	<tr>
+        <td>
+		  <form id="form1" name="form1" method="post" action="{S_POST_ACTION}">
+          <input name="do_mime1" type="submit" id="do_mime1" value="   {L_EVENT_1}   " style="cursor:pointer" />
+		  <input name="mode" type="hidden" id="mode" value="1" />
+		  <input name="cityid" type="hidden" id="cityid" value="{CITY_ID}" />
+		  </form>		</td>
+        </tr>
+      <tr>
+        <td height="22"> {L_EVENT_1_DESC}</td>
+        </tr>
+    </table>
+	</td>
+          </tr>
+        </table>
+	<table width="200" border="0" cellspacing="1" cellpadding="0" class="tablebg" style="float:left; margin:2px;">
+          <tr>
+            <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="row1">
+                  <tr>
+                    <td><form id="form1" name="form1" method="post" action="{S_POST_ACTION}">
+                        <input name="do_mime1" type="submit" id="do_mime1" value="    {L_EVENT_2}   " style="cursor:pointer" />
+                        <input name="mode" type="hidden" id="mode" value="2" />
+                        <input name="cityid" type="hidden" id="cityid" value="{CITY_ID}" />
+                    </form></td>
+                  </tr>
+                  <tr>
+                    <td height="22"> {L_EVENT_2_DESC}</td>
+                  </tr>
+              </table></td>
+          </tr>
+        </table>
+	
+    <table width="200" border="0" cellspacing="1" cellpadding="0" class="tablebg" style="float:left; margin:2px;">
+      <tr>
+        <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="row1">
+            <tr>
+              <td><form id="form1" name="form1" method="post" action="{S_POST_ACTION}">
+                  <input name="do_mime1" type="submit" id="do_mime1" value="    {L_EVENT_3}   " style="cursor:pointer" />
+                  <input name="mode" type="hidden" id="mode" value="3" />
+                  <input name="cityid" type="hidden" id="cityid" value="{CITY_ID}" />
+              </form></td>
+            </tr>
+            <tr>
+              <td height="22"> {L_EVENT_3_DESC}</td>
+            </tr>
+        </table></td>
+      </tr>
+    </table>
+</div><br />
+<div id="workgroup">
+<!-- BEGIN user_event_list -->
+<table width="200" border="0" cellspacing="1" cellpadding="0" class="tablebg" style="float:left; margin:2px;">
+          <tr>
+            <td align="left">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="row1">
+	<tr>
+        <td>
+		  <form id="form1" name="form1" method="post" action="{S_POST_ACTION}">
+          <input name="do_mime1" type="submit" id="do_mime1" value="   {user_event_list.EVENT_NAME}   " style="cursor:pointer" />
+		  <input name="mode" type="hidden" id="mode" value="{user_event_list.EVENT_ID}" />
+		  <input name="cityid" type="hidden" id="cityid" value="{CITY_ID}" />
+		  </form>		</td>
+        </tr>
+      <tr>
+        <td height="22"> {user_event_list.EVENT_DESC}</td>
+        </tr>
+      <tr>
+        <td height="22">{user_event_list.EVENT_LIMIT}</td>
+      </tr>
+    </table>
+	</td>
+          </tr>
+        </table>
+<!-- END user_event_list -->		
+	</div></td>
+        <td width="200" align="left" valign="top"><table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+          <tr>
+            <td height="27" align="center" valign="middle" class="cat"><p style="font-size:14px;color: black;font-weight: bold;white-space: normal;">{L_CASTELLAN_PLACARD}</p></td>
+          </tr>
+          <tr>
+            <td height="27" align="center" valign="middle" class="row1"><p style="font-size:12px;color: black;white-space: normal;">{L_CASTELLAN_PLACARD_C}</p></td>
+          </tr>
+        </table>
+          <br clear="all" />		</td>
+      </tr>
+    </table>
+    <br clear="all" />
+
+	<br clear="all" />
+
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+		<tr>
+			<td class="row1">
+				<p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a></p>
+				<p class="datetime">{S_TIMEZONE}</p>
+			</td>
+		</tr>
+	</table>
+
+    <br clear="all" />
+    <!-- IF not S_USER_LOGGED_IN -->
+
+
+	<form method="post" action="{S_LOGIN_ACTION}"><table class="tablebg" width="100%" cellspacing="1">
+		<tr>
+			<td class="cat"><h4><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></h4></td>
+		</tr>
+		<tr>
+			<td class="row1" align="center"><span class="genmed">{L_USERNAME}:</span> <input class="post" type="text" name="username" size="10" />&nbsp; <span class="gensmall">{L_PASSWORD}:</span> <input class="post" type="password" name="password" size="10" />&nbsp; <span class="gensmall">{L_LOG_ME_IN}</span> <input class="text" type="checkbox" name="autologin" />&nbsp; <input type="submit" class="btnmain" name="login" value="{L_LOGIN}" /></td>
+		</tr>
+	</table></form>
+	<!-- ENDIF -->
+
+	<br clear="all" />
+<!-- INCLUDE overalllit_footer.html -->

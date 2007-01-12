@@ -1,0 +1,54 @@
+<!-- INCLUDE overall_header.html -->
+
+	<!-- $Id: index_body.html,v 1.14 2006/03/12 23:19:54 acydburn Exp $ -->
+
+
+
+<div id="wrap">
+	<div id="page-body">
+		<div id="tabs">
+			<ul>
+							<li {S_SELECTED1}><a href="{U_URL}1"><span>{L_SHOP_INFO}</span></a></li>
+							<li {S_SELECTED2}><a href="{U_URL}2"><span>{L_CIVI_OBJECT}</span></a></li>
+							<li {S_SELECTED3}><a href="{U_URL}3"><span>{L_SHOP_STOCK}</span></a></li>
+						</ul>
+		</div>
+	
+		<div class="panel">
+			<span class="corners-top"><span></span></span>
+				<div id="content">
+					<div id="menu">
+						<p>{L_WELCOME_IN}<br /><strong>PROSE</strong> [&nbsp;<a href="../../ucp.php?sid=0fad2cd1c1164520ab44caafbe64cd39&amp;mode=logout">Logout</a>&nbsp;]</p>
+						<ul>
+													<li class="header">{L_SHOP_BASEINFO}</li>
+															<li><span>{L_SHOP_TYPE}:{V_SHOP_TYPE}</span></li>
+															<li><span>{L_SHOP_STATE}:{V_SHOP_STATE}</span></li>
+															<li><span>{L_SHOP_LEVEL}: {V_SHOP_LEVEL} {L_LEVEL}</span></li>
+															<li><span>{L_CREATE_TIME}:</span></li>
+															
+														
+															
+														<li class="header">{L_OWNER_INFO}</li>
+															<li><a href="../index.php?sid=0fad2cd1c1164520ab44caafbe64cd39&amp;i=board&amp;mode=auth"><span>Authentication</span></a></li>
+															<li><a href="../index.php?sid=0fad2cd1c1164520ab44caafbe64cd39&amp;i=board&amp;mode=email"><span>Email Settings</span></a></li>
+															<li><a href="../index.php?sid=0fad2cd1c1164520ab44caafbe64cd39&amp;i=jabber&amp;mode=settings"><span>Jabber Settings</span></a></li>
+
+													</ul>
+					</div>
+	
+					<div id="main">
+					
+<!-- IF S_SHOP_INFO --><!-- INCLUDE shop_info_main.html --><!-- ENDIF -->
+<!-- IF S_SALE_LIST --><!-- INCLUDE shop_sell_main.html --><!-- ENDIF -->
+<!-- IF S_STOCK_LIST --><!-- INCLUDE shop_stock_main.html --><!-- ENDIF -->
+</div>
+				</div>
+			<span class="corners-bottom"><span></span></span>
+		</div>
+	</div>
+	
+
+
+	
+</div>
+<!-- INCLUDE overall_footer.html -->

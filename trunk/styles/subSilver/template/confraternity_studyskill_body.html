@@ -1,0 +1,78 @@
+<!-- INCLUDE overalllit_header.html -->
+<!-- INCLUDE city_menu.html -->
+	<!-- $Id: index_body.html,v 1.14 2006/03/12 23:19:54 acydburn Exp $ -->
+<SCRIPT LANGUAGE="Javascript">
+
+	function showskillinfo(gid){
+
+		document.getElementById("skillinfo_"+gid).style.display = "block"; 
+	
+	}
+	function hideskillinfo(gid){
+		document.getElementById("skillinfo_"+gid).style.display = "none"; 
+	}
+</SCRIPT>	
+{M_AJAX}
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+      <tr>
+        <td height="27" align="center" valign="middle" class="row1"><p style="font-size:14px;color: black;font-weight: bold;white-space: normal;">{CITYNAME} - {BUILD_NAME}{L_SKILL_STUDY}  [<a href="{S_MAIN_URL}">{L_GOTO_MAIN}</a>]</p></td>
+      </tr>
+    </table>
+	<br clear="all" />
+	    <table width="100%" height="200" cellpadding="0" cellspacing="1" class="city_main">
+      <tr>
+	  <td width="80" ></td>
+        <td align="left" valign="top">
+		<ul id="skilllist">
+		<!-- BEGIN skill_list -->
+		<li class="skillcontent" onmouseover="showskillinfo({skill_list.SKILL_ID})" onmouseout="hideskillinfo({skill_list.SKILL_ID})" id="skillli{skill_list.SKILL_ID}"><div id="skillimg"><img src="images/rpg/skills/{skill_list.SKILL_ID}.gif" /></div>
+	<div id="skillname">{skill_list.SKILL_NAME}</div><div id="skillprice">
+	<!-- IF skill_list.PRICE_G -->
+	<img src="images/rpg/g.gif" />{skill_list.PRICE_G}
+	<!-- ENDIF -->	<!-- IF skill_list.PRICE_S -->
+	<img src="images/rpg/s.gif" />{skill_list.PRICE_S}
+	<!-- ENDIF -->	<!-- IF skill_list.PRICE_C -->
+	<img src="images/rpg/c.gif" />{skill_list.PRICE_C}
+	<!-- ENDIF -->
+	</div><div id="skillaction"><input name="bn_study" type="button" value="{L_SKILL_STUDY}" style="cursor:pointer;" onclick="xajax_study({skill_list.SKILL_ID},{BUILDID});return false;" />
+	</div></li>
+		<!-- END skill_list -->
+		</ul>
+</td>
+        <td width="224" height="200" align="left" valign="top" id="info">
+				
+
+		<div class="skill_info" id="skillinfo" style="display:block;">
+		<!-- BEGIN skill_list -->
+		
+		<div class="skill_content" id="skillinfo_{skill_list.SKILL_ID}" style="display:none;">
+		<div id="skillimg"><img src="images/rpg/skills/{skill_list.SKILL_ID}.jpg" /></div>
+		<div id="skillname">{skill_list.SKILL_NAME}</div>
+		<div id="skillline">{L_SKILL_LEVEL} : {skill_list.SKILL_LV}</div>
+		<div id="skilldesc">{skill_list.SKILL_DESC}</div>
+		</div>
+		
+		<!-- END skill_list -->
+		</div>
+		</td>
+      </tr>
+</table>
+
+
+	<br clear="all" />
+
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+		<tr>
+			<td class="row1">
+				<p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a></p>
+				<p class="datetime">{S_TIMEZONE}</p>
+			</td>
+		</tr>
+	</table>
+
+
+    <br clear="all" />
+
+
+
+<!-- INCLUDE overall_footer.html -->

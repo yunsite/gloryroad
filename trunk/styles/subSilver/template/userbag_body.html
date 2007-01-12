@@ -1,0 +1,23 @@
+					
+<a name="maincontent"></a><h1>{L_USER_BAG}</h1>
+
+<ul id="bags" class="userbag">
+<!-- BEGIN bagsrow -->
+	 <li class="bagshow" id="bag_{bagsrow.BAG_ITEMID}"></li>
+<!-- END bagsrow -->
+</ul>
+<div id="object_info">
+
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+	var bagobjs = [];
+	var userobjs =[];
+	for (var z=0; z<36; z++) {
+		bagobjs[z] = document.getElementById("bag_"+z);
+	}
+	{U_BAG_LIST}
+
+-->
+</script>
+

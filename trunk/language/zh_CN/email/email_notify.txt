@@ -1,0 +1,18 @@
+Subject: {SITENAME} - 寄信给友人
+Charset: utf-8
+
+{TO_USERNAME} 您好,
+
+这封信件由 {FROM_USERNAME} 藉着 "{SITENAME}" 寄出, 他觉得您可能对以下文章感兴趣 :
+
+{TOPIC_NAME}
+
+您可以使用底下连结来观看:
+
+{U_TOPIC}
+
+底下可能包含由 {FROM_USERNAME} 发出的讯息. 请注意这篇讯息系统管理员并未过目或同意. 若您要举发收到这个邮件请于 {BOARD_EMAIL} 通知系统管理员. 通知时请引言讯息标题.
+
+----------
+
+{MESSAGE}

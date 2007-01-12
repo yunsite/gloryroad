@@ -1,0 +1,116 @@
+<!-- INCLUDE overalllit_header.html -->
+<!-- INCLUDE city_menu.html -->
+	<!-- $Id: index_body.html,v 1.14 2006/03/12 23:19:54 acydburn Exp $ -->
+	{M_AJAX}
+
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+      <tr>
+        <td width="77%" height="27" align="center" valign="middle" class="row1"><p style="font-size:14px;color: black;font-weight: bold;white-space: normal;">{CITYNAME} - {STREET_NAME} [{STREET_ALL}/{STREET_USE}]</p></td>
+        <td width="23%" align="center" valign="middle" class="row1">&nbsp;</td>
+      </tr>
+    </table>
+	<br clear="all" />
+
+	
+	    <table width="100%" cellspacing="2" cellpadding="2" class="city_main">
+      <tr>
+        <td height="181" align="left" valign="top">
+		<!-- BEGIN city_zone_list -->
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" style="border:#adbac6 1px solid;background-color:#fffbe8; margin-bottom:8px;">
+          <tr>
+            <td width="100" height="130" align="center" valign="middle" id="imgbuild_{city_zone_list.ZONE_ORDER}">
+			<img src="images/rpg/build/{city_zone_list.BUILD_IMG}.gif" /></td>
+            <td align="left" valign="top">
+			<div class="zonetop">{STREET_NAME} <b>{city_zone_list.ZONE_ORDER}</b> {L_ZONE_NUM}</div>
+			<div class="zonecontent">
+			<!-- IF city_zone_list.BUILD_SHOW -->
+				<div class="zonetitle" id="zatitle_{city_zone_list.ZONE_ORDER}"><a href="{city_zone_list.BUILD_URL}">{city_zone_list.BUILD_NAME}</a></div>
+				<div class="zonedesc" id="zacontent_{city_zone_list.ZONE_ORDER}">{L_BUILD_TYPE} : {city_zone_list.BUILD_TYPE}<br />
+				{L_BUILD_STATE} : {city_zone_list.BUILD_STATE}<br />
+				{L_SHOP_USER} : {city_zone_list.BUILD_USER}<br />
+			  {L_BUILD_LEVEL} : {city_zone_list.BUILD_LEVEL}</div>
+			<!-- ELSE -->
+				<!-- IF (city_zone_list.ZONE_STATE ==0)  -->
+				<div class="zonetitle" id="zatitle_{city_zone_list.ZONE_ORDER}">{L_ZONE_NO_OWNER}</div>
+			 <div class="zonedesc" id="zacontent_{city_zone_list.ZONE_ORDER}">{L_ZONE_NO_OWNERDESC}<br />
+			 <span class="zonedesc">{L_ZONE_AREA} :</span>{city_zone_list.ZONE_AREA}<br />
+			 <span class="zoneline">{L_ZONE_PRICE} : </span>{city_zone_list.ZP_GOLD}{city_zone_list.ZP_SILVER}{city_zone_list.ZP_COPPER}
+				<!-- ELSEIF (city_zone_list.ZONE_STATE ==1) -->	
+			 <div class="zonetitle" id="zatitle_{city_zone_list.ZONE_ORDER}">{L_ZONE_ALL_SELL}</div>
+			 <div class="zonedesc" id="zacontent_{city_zone_list.ZONE_ORDER}">{L_ZONE_SELL_DESC}</div>
+				<!-- ELSEIF (city_zone_list.ZONE_STATE ==2) -->	
+				
+			 <div class="zonetitle" id="zatitle_{city_zone_list.ZONE_ORDER}">
+			 <!-- IF city_zone_list.BUILD_TIMESHOW -->
+			 {city_zone_list.BUILD_NAME}
+			 <!-- ELSE -->
+			 {L_ZONE_CONS}
+			 <!-- ENDIF -->
+			 </div>
+			 
+			 <div class="zonedesc" id="zacontent_{city_zone_list.ZONE_ORDER}">
+			 <!-- IF city_zone_list.BUILD_TIMESHOW -->
+			 {L_ZONE_CONING}
+			 <!-- ELSE -->
+			 {L_ZONE_CONS_DESC}
+			 <!-- ENDIF -->
+			 <br />
+			 	{L_BUILT_TIME} :
+				<!-- IF city_zone_list.BUILD_TIMESHOW -->
+				
+					<script src="styles/subSilver/template/cnt.js" type="text/javascript"> </script><span id="bxx{city_zone_list.ZONE_ORDER}"></span><script language="JavaScript"  type="text/javascript">
+   pp="{city_zone_list.BUILD_TIME}";
+   pbuild = "{city_zone_list.BUILD_ID}";
+   porder="{city_zone_list.ZONE_ORDER}";
+   psid="{S_ID}";
+   t();
+                   
+</script> 
+				<!-- ELSE -->
+				{city_zone_list.BUILD_TIME}{L_DAY}
+				<!-- ENDIF -->
+				
+</div>
+				<!-- ENDIF -->
+			 
+			<!-- ENDIF --></div>
+			</td>
+          </tr>
+        </table>
+		<!-- END city_zone_list -->
+		</td>
+        <td width="210" align="left" valign="top"></td>
+      </tr>
+    </table>
+    <br clear="all" />
+
+	<br clear="all" />
+
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+		<tr>
+			<td class="row1">
+				<p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a></p>
+				<p class="datetime">{S_TIMEZONE}</p>
+			</td>
+		</tr>
+	</table>
+
+    <br clear="all" />
+    <!-- IF not S_USER_LOGGED_IN -->
+
+
+	<form method="post" action="{S_LOGIN_ACTION}"><table class="tablebg" width="100%" cellspacing="1">
+		<tr>
+			<td class="cat"><h4><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></h4></td>
+		</tr>
+		<tr>
+			<td class="row1" align="center"><span class="genmed">{L_USERNAME}:</span> <input class="post" type="text" name="username" size="10" />&nbsp; <span class="gensmall">{L_PASSWORD}:</span> <input class="post" type="password" name="password" size="10" />&nbsp; <span class="gensmall">{L_LOG_ME_IN}</span> <input class="text" type="checkbox" name="autologin" />&nbsp; <input type="submit" class="btnmain" name="login" value="{L_LOGIN}" /></td>
+		</tr>
+	</table></form>
+	<!-- ENDIF -->
+
+	<br clear="all" />
+
+
+
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,37 @@
+<SCRIPT LANGUAGE="Javascript">
+
+	function skillinfo(gid){
+		if (document.getElementById("desc_"+gid).style.display == "block")	{
+		document.getElementById("desc_"+gid).style.display = "none"; 
+
+	}else{
+		document.getElementById("desc_"+gid).style.display = "block"; 
+	}	
+	}
+	
+</SCRIPT>
+					
+<a name="maincontent"></a><h1>{L_USER_SKILLS}</h1>
+<!-- BEGIN skill_list -->
+<table width="270" border="0" cellspacing="2" cellpadding="0" style="background-color:#f7efce;border:#9c7d39 1px solid;">
+  <tr onclick="skillinfo({skill_list.SKILL_ID})" style="cursor:pointer;">
+    <td width="32"><img src="images/rpg/skills/{skill_list.SYS_BUILD}/{skill_list.SKILL_ID}.gif" /></td>
+    <td width="218" align="center" style="font-size:14px; font-weight:bold;">{skill_list.SKILL_NAME}</td>
+    <td width="120" align="left">{L_USER_LEVEL} : {skill_list.SKILL_LV}</td>
+  </tr>
+  <tr id="desc_{skill_list.SKILL_ID}" style="display:none;">
+    <td colspan="3" align="center"><table width="260" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="260" align="left">{skill_list.SKILL_DESC} </td>
+        </tr>
+        <tr>
+          <td align="left"><img src="images/rpg/bar/energy.gif" height="10" width="{skill_list.SKILL_LEN}">	</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<!-- END skill_list -->
+

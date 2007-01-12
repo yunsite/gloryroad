@@ -1,0 +1,12 @@
+Subject: 冻结帐号提醒
+Charset: utf-8
+
+{USERNAME} 您好,
+
+于 {REGISTER_DATE} 您在 "{SITENAME}" 注删帐号. 您一直未启用, 在您登入系统前您必须作启用动作. 方便起见请使用以下连结.
+ 
+{U_ACTIVATE}
+
+感谢您的注册, 期待您的参与.
+
+{EMAIL_SIG}
