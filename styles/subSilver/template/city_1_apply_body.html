@@ -1,0 +1,72 @@
+<!-- INCLUDE overalllit_header.html -->
+
+<!-- INCLUDE city_menu.html -->
+	<!-- $Id: index_body.html,v 1.14 2006/03/12 23:19:54 acydburn Exp $ -->
+{M_AJAX}	
+	<br clear="all" />
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+      <tr>
+        <td height="27" align="center" valign="middle" class="row1"><p style="font-size:14px;color: black;font-weight: bold;white-space: normal;">{CITYNAME} - {L_CITY_HALL} - {L_LICENSE_BUY}</p><span><a href="{U_HALL_ROOM}">{L_GOTO_ALL}</a></span></td>
+      </tr>
+    </table>
+	<table width="100%" cellspacing="2">
+          <tr>
+            <td width="30%" height="73" align="left" valign="top" ><table width="100%" height="100%" cellspacing="1" class="tablebg">
+                <tr>
+                  <th colspan="3">{L_SOWNTOWN_BUILD_APP}</th>
+                </tr>
+				                <tr>
+                  <td height="23" colspan="3" align="left" valign="middle" class="row1">{L_CITY_BUILD_LV} : {C_BUILD_LV}</td>
+                </tr>
+<!-- BEGIN city_bbuild_licenses -->
+                <tr>
+                  <td width="35%" height="17" align="center" valign="middle" class="row1">{city_bbuild_licenses.BUILD_NAME}</td>
+                  <td width="35%" align="center" valign="middle" class="row1">{city_bbuild_licenses.LICENSE_PRICE}{L_C_COIN}</td>
+                  <td width="30%" align="left" valign="top" class="row1"><input type="submit" name="Submit" value="{L_LICENSE_BUY}" onclick="xajax_license({city_bbuild_licenses.LICENSE_ID},{CITY_ID});return false;" style="cursor:pointer" /></td>
+                </tr>
+				<!-- END city_bbuild_licenses -->
+            </table></td>
+            <td width="30%" align="left" valign="top"><table width="100%" height="100%" cellspacing="1" class="tablebg">
+                <tr>
+                  <th  colspan="3">{L_UPTOWN_BUILD_APP}</th>
+                </tr>
+                <tr>
+                  <td height="23" colspan="3" align="left" valign="middle" class="row1">{L_CITY_BUILD_LV} : {C_BUILD_LV}</td>
+                </tr>
+				<!-- BEGIN city_tbuild_licenses -->
+                <tr>
+                  <td width="35%" height="17" align="center" valign="middle" class="row1">{city_tbuild_licenses.BUILD_NAME}</td>
+                  <td width="35%" align="center" valign="middle" class="row1">{city_tbuild_licenses.LICENSE_PRICE}{L_C_COIN}</td>
+                  <td width="30%" align="left" valign="top" class="row1"><input type="submit" name="Submit" value="{L_LICENSE_BUY}" onclick="xajax_license({city_tbuild_licenses.LICENSE_ID},{CITY_ID});return false;" style="cursor:pointer" /></td>
+                </tr>
+				<!-- END city_tbuild_licenses -->
+            </table></td>
+            <td width="40%" align="left" valign="top"><table width="100%" height="100%" cellspacing="1" class="tablebg">
+                <tr>
+                  <th colspan="3">{L_WORK_LICENSE}</th>
+                </tr>
+               				<!-- BEGIN city_work_licenses -->
+                <tr>
+                  <td width="35%" height="17" align="center" valign="middle" class="row1">{city_work_licenses.LICENSE_NAME}[{city_work_licenses.LICENSE_TIME}]</td>
+                  <td width="35%" align="center" valign="middle" class="row1">{city_work_licenses.LICENSE_PRICE}{L_C_COIN}</td>
+                  <td width="30%" align="left" valign="top" class="row1"><input type="submit" name="Submit" value="{L_LICENSE_BUY}" onclick="xajax_license({city_work_licenses.LICENSE_ID},{CITY_ID});return false;" style="cursor:pointer" /></td>
+                </tr>
+				<!-- END city_work_licenses -->
+            </table></td>
+          </tr>
+        </table>
+    <br clear="all" />
+
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+		<tr>
+			<td class="row1">
+				<p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a></p>
+				<p class="datetime">{S_TIMEZONE}</p>
+			</td>
+		</tr>
+	</table>
+
+    <br clear="all" />
+
+
+<!-- INCLUDE overalllit_footer.html -->

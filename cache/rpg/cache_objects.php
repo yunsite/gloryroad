@@ -1,0 +1,41 @@
+<?php
+
+
+
+$sys_objects = array(
+	1=>
+		array (
+			'objectid'			=> 1,
+			'objectname'		=> 'Ê¯¿é',
+			'objecttype'		    => 1
+			
+		),
+
+	2=>
+		array (
+			'objectid'			=> 2,
+			'objectname'		    => 'Ä¾¿é',
+			'objecttype'		    => 1
+		),
+	3=>
+		array (
+			'objectid'			=> 3,
+			'objectname'		    => 'ÊÞ¹Ç',
+			'objecttype'		    => 1
+		),
+	4=>
+		array (
+			'objectid'			=> 4,
+			'objectname'		    => 'ÊÞÆ¤',
+			'objecttype'		    => 1
+		),
+	5=>
+		array (
+			'objectid'			=> 5,
+			'objectname'		    => '¶¯ÎïµÄÈâ',
+			'objecttype'		    => 1
+		),
+);
+
+
+?>

@@ -1,0 +1,14 @@
+Subject: 版面订阅通知 - {FORUM_NAME}
+Charset: utf-8
+
+{USERNAME} 您好,
+
+您收到这封这封电子邮件是因为您在"{SITENAME}"订阅了版面"{FORUM_NAME}", 这个版面在您上次来访后有新的回覆讯息. 您可以使用以下连结来观看回覆的讯息, 在您观看原主题之前, 不会有更新的讯息通知您.
+
+{U_NEWEST_POST}
+
+如果您想取消订阅这个版面, 您可以按下版面上方"取消订阅这个版面"的连结, 或直接使用以下连结:
+
+{U_STOP_WATCHING_FORUM}
+
+{EMAIL_SIG}

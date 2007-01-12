@@ -1,0 +1,143 @@
+<script language="javascript" type="text/javascript">
+<!--
+var body=document.body,agent=navigator.userAgent
+var isIE,isIE4,isIE5,isIE6,isOpr,isMoz
+
+var l
+
+String.prototype.inc=function(k1,k2){return k2==null?this.indexOf(k1)>-1?true:false:(k2+this+k2).indexOf(k2+k1+k2)>-1?true:false}
+
+
+isOpr=agent.inc("Opera")
+isIE=agent.inc("IE")&&!isOpr
+isIE4=agent.inc("IE 4")
+isIE5=agent.inc("IE 5")||agent.inc("IE 4")
+isIE6=isIE&&!isIE5
+isMoz=agent.inc("Mozilla")&&!isOpr&&!isIE
+if(isIE4){
+	document.getElementById=function(key){return document.all[key]}
+	document.getElementsByName=function(key){var a=new Array(),ol=document.all;for(i=0;i<ol.length;i++){if(ol[i].name==key)a[a.length]=ol[i];}return a}
+	document.getElementsByTagName=function(key){var a=new Array(),ol=document.all;for(i=0;i<ol.length;i++){if(ol[i].tagName.toLowerCase()==key)a[a.length]=ol[i];}return a}
+}
+if(isMoz){
+	Event.prototype.__defineGetter__("srcElement",function(){var node=this.target;while(node.nodeType!=1){node=node.parentNode}return node})
+	HTMLElement.prototype.__defineGetter__("children",function(){return this.childNodes})
+	HTMLElement.prototype.__defineGetter__("parentElement",function(){return this.parentNode})
+}
+
+//-->
+</script>
+<span id="bxDlg_bg" style="visibility:hidden;width:100%;position:absolute;left:0;top:0">
+<script language="javascript" type="text/javascript">
+if(!isIE)
+	document.write("<div id=bxDlg_bg1 style=visibility:hidden;height:100%;background:url(http://image2.sina.com.cn/rny/ria2/alpha_3.png)><div id=bxDlg_bg2 style=visibility:hidden;height:100%;background:url(http://image2.sina.com.cn/rny/ria2/alpha_3.png)><div id=bxDlg_bg3 style=visibility:hidden;height:100%;background:url(http://image2.sina.com.cn/rny/ria2/alpha_3.png)><div id=bxDlg_bg4 style=visibility:hidden;height:100%;background:url(http://image2.sina.com.cn/rny/ria2/alpha_3.png)><div id=bxDlg_bg5 style=visibility:hidden;height:100%;background:url(http://image2.sina.com.cn/rny/ria2/alpha_3.png)></div></div></div></div></div>")
+</script>
+</span>
+<span id=bxDlg align=left  style="visibility:hidden;position:absolute;top:0;background:url(http://image2.sina.com.cn/rny/ria2/dlg_head_bg.gif) white repeat-x;width:300;height:160;overflow:hidden;border:1px solid #E39C21"></span>					
+<a name="maincontent"></a><h1>{L_GENERAL}</h1>
+
+<p>&nbsp;</p>
+
+<table cellspacing="1">
+
+	<col class="col1" /><col class="col2" /><col class="col1" /><col class="col2" />
+	<thead>
+		<tr>
+			<th width="60">{L_ATT_NAME}</th>
+			<th width="200">Value</th>
+			<th width="60">{L_ATT_NAME}</th>
+			<th width="200">Value</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{L_USER_ACTIVITY}: </td>
+			<td><div class="barenergybg"><img src="images/rpg/bar/energy.gif" height="10" width="{U_ENERGY}"></div></td>
+			<td>{L_USER_WEIGHT}: </td>
+			<td><div class="barweightbg" id="wgbar"><img src="images/rpg/bar/wg.gif" height="10" width="{U_WEIGHT}"></div></td>
+		</tr>
+		<tr>
+			<td>{L_USER_HP}: </td>
+			<td><div class="barhpbg" id="hpbar"><img src="images/rpg/bar/hp.gif" height="10" width="{U_HP_NOW}"></div></td>
+			<td>{L_USER_MAGIC}: </td>
+			<td><div class="barmpbg" id="magicbar"><img src="images/rpg/bar/mp.gif" height="10" width="{U_MAGIC_NOW}"></div></td>
+		</tr>
+		<tr>
+			<td>{L_USER_EXP}: </td>
+			<td><div class="barexpbg" id="expbar"><img src="images/rpg/bar/exp.gif" height="10" width="{U_EXP}" ></div>
+			<span id="userexp">{U_NOW_EXP}</span>/<span id="uplevelexp">{U_UPLEVELEXP}</span>
+			</td>
+		    <td colspan="2">
+			<div id="leveladd">
+			<!-- IF S_UPDATE_LEVEL -->
+			<input type="submit" name="updatelevel" value="{L_USER_UPDATE}" onclick="javascript:xajax_update('exp');return false;" style="cursor:pointer" />
+			<!-- ENDIF -->
+			</div>
+			
+			</td>
+	    </tr>
+	</tbody>
+</table>
+
+<br />
+<table cellspacing="1">
+<thead>
+<tr>
+	<th width="60">{L_ATT_NAME}</th>
+	<th width="200">Value</th>
+	<th width="60">{L_ATT_NAME}</th>
+	<th width="200">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row1">
+		<td style="text-align: center;">{L_USER_PHYLE}:</td>
+		<td style="text-align: center;"><b>{U_PHYLE}</b></td>
+		<td style="text-align: center;">{L_USER_BELIEF}: </td>
+		<td style="text-align: center;"><b>{U_GODLINESS}</b></td>
+	</tr>
+<tr class="row2">
+  <td style="text-align: center;">{L_USER_GENDER}:</td>
+  <td style="text-align: center;"><b>{U_GENDER}</b></td>
+  <td style="text-align: center;">&nbsp;</td>
+  <td style="text-align: center;"><div id="point"></div></td>
+</tr>
+<tr class="row2">
+		<td style="text-align: center;">{L_USER_CREDIT}:</td>
+		<td style="text-align: center;"><b><span id="credit_v">{U_CREDIT}</span></b></td>
+		<td style="text-align: center;">{L_USER_LEVEL}: </td>
+		<td style="text-align: center;"><b><span id="userlevel">{U_LEVEL}</span></b></td>
+	</tr>
+<tr class="row1">
+		<td style="text-align: center;">{L_USER_CON}: </td>
+		<td style="text-align: center;"><span id="con_v">{U_CON}</span><div id="con_add"><!-- IF S_UPDATE_CON -->
+			<input type="submit" name="updatecon" value="{L_USER_UPDATE}" onclick="javascript:xajax_update('con');" style="cursor:pointer" />
+			<!-- ENDIF --></div></td>
+		<td style="text-align: center;">{L_USER_STR}: </td>
+		<td style="text-align: center;"><span id="str_v">{U_STR}</span><div id="str_add"><!-- IF S_UPDATE_STR -->
+			<input type="submit" name="updatestr" value="{L_USER_UPDATE}" onclick="javascript:xajax_update('str');" style="cursor:pointer" />
+			<!-- ENDIF --></div></td></td>
+	</tr>
+<tr class="row2">
+		<td style="text-align: center;">{L_USER_DEX}:</td>
+		<td style="text-align: center;"><div  id="dex_v">{U_DEX}</div><div id="dex_add"><!-- IF S_UPDATE_DEX -->
+			<input type="submit" name="updatedex" value="{L_USER_UPDATE}"  onclick="javascript:xajax_update('dex');" style="cursor:pointer"/>
+			<!-- ENDIF --></div></td>
+		<td style="text-align: center;">{L_USER_INT}:</td>
+		<td style="text-align: center;"><div  id="int_v">{U_INT}</div><div id="int_add"><!-- IF S_UPDATE_INT -->
+			<input type="submit" name="updateint" value="{L_USER_UPDATE}" onclick="javascript:xajax_update('int');" style="cursor:pointer" />
+			<!-- ENDIF --></div></td>
+	</tr>
+<tr class="row1">
+		<td style="text-align: center;">{L_USER_CHA}:</td>
+		<td style="text-align: center;"><div  id="cha_v">{U_CHA}</div><div id="cha_add"><!-- IF S_UPDATE_CHA -->
+			<input type="submit" name="updatecha" value="{L_USER_UPDATE}" onclick="javascript:xajax_update('cha');" style="cursor:pointer" />
+			<!-- ENDIF --></div></td>
+		<td style="text-align: center;">{L_USER_WIS}:</td>
+		<td style="text-align: center;"><div  id="wis_v">{U_WIS}</div><div id="wis_add"><!-- IF S_UPDATE_WIS -->
+			<input type="submit" name="updatewis" value="{L_USER_UPDATE}" onclick="javascript:xajax_update('wis');" style="cursor:pointer" />
+			<!-- ENDIF --></div></td>
+	</tr>
+</tbody>
+</table>
+

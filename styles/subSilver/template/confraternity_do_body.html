@@ -1,0 +1,146 @@
+<!-- INCLUDE overalllit_header.html -->
+<!-- INCLUDE city_menu.html -->
+	<!-- $Id: index_body.html,v 1.14 2006/03/12 23:19:54 acydburn Exp $ -->
+
+{M_AJAX}
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+      <tr>
+        <td height="27" align="center" valign="middle" class="row1"><p style="font-size:14px;color: black;font-weight: bold;white-space: normal;">{CITYNAME} - {BUILD_NAME}{SKILL_USE}  [<a href="{S_MAIN_URL}">{L_GOTO_MAIN}</a>]</p></td>
+      </tr>
+    </table>
+	<br clear="all" />
+	    <table width="100%" height="200" cellpadding="0" cellspacing="4" class="city_main">
+      <tr>
+	  <td width="260" align="left" valign="top">
+	<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#f7efce;
+	border:#9c7d39 1px solid;">
+  <tr>
+    <td height="26" style="padding-left:8px;">{L_SELECT_DO}</td>
+  </tr>
+  <tr>
+    <td style="padding-left:8px;">
+	<select name="selectf" id="selectf" onchange="selectFormulaInfo(this);">
+	<option value="0" selected="selected">{L_PLEASE_SELECT}</option>
+	<!-- BEGIN formula_list -->
+	<option value="{formula_list.FORMULA_ID}">{formula_list.OBJECTNAME}{L_OBJECT_BOOK}</option>
+	<!-- END formula_list -->
+	</select>
+	
+	</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>	    </td>
+        <td height="200" align="left" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color:#f7efce;
+	border:#9c7d39 1px solid;">
+          <tr>
+            <td height="26" colspan="5" style="padding:6px;"><div id="objecttitle">
+			<div id="objectimg" style="padding:1px;"></div>
+			<div id="objectname"></div><input name="fid" id="fid" type="hidden" value="0" /><input name="buildid" id="buildid" type="hidden" value="{BUILDID}" />
+			<div id="objectskill">
+			<ul class="scontent" style="list-style-type:none;">
+			<li id="skills1" style="display:none;">
+			<div class="skillc">
+			<div class="skillimg" id="skillimg_1"></div>
+			<div class="skillname" id="skillname_1"></div>
+			</div>
+			</li>
+			<li id="skills2" style="display:none;">
+			<div class="skillc">
+			<div class="skillimg" id="skillimg_2"></div>
+			<div class="skillname" id="skillname_2"></div>
+			</div>
+			</li>
+			</ul>			
+			</div>
+			<div id="objectn">
+			<ul class="ocontent" style="list-style-type:none;">
+			<li id="objects1" style="display:none;">
+			<div class="obnum" id="objectsnum_1"></div>
+			<div class="obimg" id="objectsimg_1"></div>
+			</li>
+			<li id="objects2" style="display:none;">
+			<div class="obnum" id="objectsnum_2"></div>
+			<div class="obimg" id="objectsimg_2"></div>
+			</li>
+			<li id="objects3" style="display:none;">
+			<div class="obnum" id="objectsnum_3"></div>
+			<div class="obimg" id="objectsimg_3"></div>
+			</li>
+			<li id="objects4" style="display:none;">
+			<div class="obnum" id="objectsnum_4"></div>
+			<div class="obimg" id="objectsimg_4"></div>
+			</li>
+			</ul>	
+			</div>
+			</div>			</td>
+          </tr>
+          <tr>
+            <td width="90" height="22" style="padding:6px;">
+{L_OB_COST}	:</td>
+            <td style="padding:6px;"><div id="fcost"></div></td>
+            <td width="78" align="right" style="padding:6px;">
+			<input type="submit" name="domax" id="domax" value="{L_MAXCOUNT}" disabled="disabled"  onclick="countmax();" style="cursor:pointer;" /></td>
+            <td width="64" align="right" style="padding:6px;">{L_DO_NUM} :</td>
+            <td width="70" align="right" style="padding:6px;"><input name="obnum" id="objectnum" type="text" value="" size="9" onblur=" checkEdit();" /><input name="max" id="max" type="hidden" value="0" /></td>
+          </tr>
+          <tr>
+            <td style="padding:6px;" height="22">			</td>
+            <td style="padding:6px;" height="22"></td>
+            <td style="padding:6px;" height="22"></td>
+            <td style="padding:6px;" height="22"></td>
+            <td height="22" align="right" style="padding:6px;" width="70"><input type="submit" id="doit" name="doit" value="{L_START_DO}" disabled="disabled" style="cursor:pointer;" onclick="dostart();" /></td>
+          </tr>
+        </table></td>
+        </tr>
+</table>
+
+
+	<br clear="all" />
+
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+		<tr>
+			<td class="row1">
+				<p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a></p>
+				<p class="datetime">{S_TIMEZONE}</p>
+			</td>
+		</tr>
+	</table>
+
+<SCRIPT LANGUAGE="Javascript" src="styles/subSilver/template/common.js"></SCRIPT>
+	<SCRIPT LANGUAGE="Javascript">
+	var allformulas=new Array(
+		new formulaInfo(0,0,'','')
+	<!-- BEGIN formula_list -->
+		,new formulaInfo({formula_list.FORMULA_ID},{formula_list.OBJECTID},"{formula_list.OBJECTNAME}",{formula_list.CASTG}, {formula_list.CASTS},{formula_list.CASTC}, new Array(
+						<!-- IF formula_list.SKILL1ID --> 
+						new skillInfo({formula_list.SKILL1ID},"{formula_list.SKILL1NAME}",{formula_list.SKILL1LV})
+						<!-- ENDIF -->
+						<!-- IF formula_list.SKILL2ID --> 
+						,new skillInfo({formula_list.SKILL2ID},"{formula_list.SKILL2NAME}",{formula_list.SKILL2LV})
+						<!-- ENDIF -->
+		),
+		new Array(
+		<!-- IF formula_list.OBJECT1ID -->
+		new ObjectInfo({formula_list.OBJECT1ID},"{formula_list.OBJECT1NAME}",{formula_list.OBJECT1LV},{formula_list.OBJECT1NUM}) 
+		<!-- ENDIF -->
+				<!-- IF formula_list.OBJECT2ID -->
+		,new ObjectInfo({formula_list.OBJECT2ID},"{formula_list.OBJECT2NAME}",{formula_list.OBJECT2LV},{formula_list.OBJECT2NUM}) 
+		<!-- ENDIF -->
+		<!-- IF formula_list.OBJECT3ID -->
+		,new ObjectInfo({formula_list.OBJECT3ID},"{formula_list.OBJECT3NAME}",{formula_list.OBJECT3LV},{formula_list.OBJECT3NUM}) 
+		<!-- ENDIF -->
+		<!-- IF formula_list.OBJECT4ID -->
+		,new ObjectInfo({formula_list.OBJECT4ID},"{formula_list.OBJECT4NAME}",{formula_list.OBJECT4LV},{formula_list.OBJECT4NUM}) 
+		<!-- ENDIF -->
+		))
+	<!-- END formula_list -->
+);
+initFormulaInfo();
+	</SCRIPT>
+    <br clear="all" />
+
+
+
+<!-- INCLUDE overall_footer.html -->

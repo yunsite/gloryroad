@@ -1,0 +1,98 @@
+/*  乌鲁城(沙漠地形样式) Style Sheet
+    --------------------------------------------------------------
+*/
+
+#objecttitle{
+	border:#9c7d39 1px solid;
+	height:42px;
+	text-align:left;
+	padding: 5px;
+	background-color:#d7c67e;
+}
+#objectimg{
+	width:36px;
+	height:36px;
+	background: #f7efce url('../../../images/rpg/object/bg_1.gif') repeat;
+	text-align: center;
+	float:left;
+	margin-top: 2px;
+	padding: 2px;
+}
+#objectname{
+	color: #006594;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 9px;
+	margin-left: 8px;
+	float:left;
+	width:150px;
+
+}
+#objectskill{
+	padding: 2px;
+	float:left;
+	width:100px;
+}
+#objectn{
+	padding: 2px;
+	float:left;
+	width:150px;
+}
+ul .scontent{
+	list-style-type:none;
+		
+}
+ul .scontent li{
+	display:inline;
+	list-style-type:none;
+	float:left;
+}
+	
+.skillc{
+	float:left;
+	font-size: 12px;
+	background-color:#f7efce;
+	border:#9c7d39 1px solid;
+	cursor:pointer;
+	height:32px;
+	padding: 2px;
+}
+
+.skillc .skillimg{
+	float:left;
+	width:32px;
+	
+}
+
+ul .ocontent{
+	list-style-type:none;
+
+	
+}
+ul .ocontent li{
+	display:inline;
+	list-style-type:none;
+	float:left;
+}
+
+
+.obimg{
+	width:34px;
+	height:34px;
+	background: #f7efce url('../../../images/rpg/object/bg_1.gif') repeat;
+	text-align: center;
+	float:left;
+	padding: 2px;
+	z-index:1; 
+}
+.obnum{
+	font-size: 10px;
+	position:absolute;
+	z-index:3; 
+	width:34px;
+	height:34px;
+	float:left;
+}
+#fcost{
+	width:250px;
+}

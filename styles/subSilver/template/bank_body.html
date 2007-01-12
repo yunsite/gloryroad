@@ -1,0 +1,185 @@
+<!-- INCLUDE overalllit_header.html -->
+
+	<!-- INCLUDE city_menu.html -->
+	
+	<!-- $Id: search_body.html,v 1.9 2004/10/19 19:26:58 acydburn Exp $ -->
+
+
+	<br clear="all" />
+	<div id="pagecontent">
+<table class="tablebg" width="100%" cellspacing="1">
+                <tr>
+                  <th colspan="4">{L_USER_MESSAGE}</th>
+                </tr>
+				 <tr>
+                  <td width="70%" class="row1"><span class="genmed">{CITYNAME} - {L_WELCOME_U}</span></td>
+                  <td width="10%" class="row1"><span class="genmed">{L_GOLD_COIN}:{U_GOLD_COIN}</span></td>
+			      <td width="10%" class="row1"><span class="genmed">{L_SILVER_COIN}:{U_SILVER_COIN}</span></td>
+			      <td width="10%" class="row1"><span class="genmed">{L_COPPER_COIN}:{U_COPPER_COIN}</span></td>
+			    </tr>
+
+      </table>
+			  <br />
+		
+		  <table width="100%"  border="0" cellspacing="2" cellpadding="2">
+            <tr>
+              <td width="18%"><table width="100%" height="100%" cellspacing="1" class="tablebg">
+                <tr>
+                  <th>{L_BANK_SAVE_DESC}</th>
+                </tr>
+                <tr>
+                  <td height="105" align="left" valign="top" class="row1"><span class="genmed">{L_SAVE_DESC_C}</span></td>
+                </tr>
+              </table></td>
+              <td width="16%"><table class="tablebg" width="100%" cellspacing="1">
+                <tr>
+                  <th width="100%" colspan="2">{L_BANK_USER_MESSAGE}</th>
+                </tr>
+				<tr>
+				<td class="row1" colspan="3" align="left"><span class="genmed">{L_BANK_MONEY}</span></td>
+				</tr>
+				<!-- BEGIN b_money -->
+                <tr>
+                  <td width="30%" height="21" align="center" class="row1"><span class="genmed">{b_money.COIN_N}</span></td>
+                  <td width="70%" height="21" align="center" class="row1"><span class="genmed">{b_money.MONEY}</span></td>
+                </tr>
+				<!-- BEGINELSE -->
+			<tr>
+				<td class="row1" colspan="3" align="center"><span class="genmed">{L_NO_ACCOUNT}</span></td>
+			</tr>
+			<!-- END b_money -->
+              </table></td>
+              <td>
+			  <table class="tablebg" width="100%" cellspacing="1">
+                <tr>
+                  <th colspan="6" align="center">{L_BANK_MAIN}</th>
+                </tr>
+                <tr>
+                  <td colspan="6" class="row1"><b class="genmed">{L_INTEREST_RATE}:{INTEREST_RATE}</b></td>
+                </tr>
+
+                  <tr>                <form method="post" action="{S_SAVE_ACTION}">
+                  <input type="hidden" name="do" value="depositorwithdraw">
+                    <td class="row1" width="33%"><b class="genmed">{L_SAVE_MONEY_TITLE}:</b><br />
+                    </td>
+                    <td class="row2" width="14%"><input name="save_money" type="text" class="post" id="save_money" style="width: 70px" size="10" maxlength="10" />
+                    </td>
+                    <td width="15%" class="row2"><select name="coin_type" id="coin_type">
+                        <option value="0">{L_SELECT_COIN}</option>
+                        <option value="1">{L_COPPER_COIN}</option>
+                        <option value="2">{L_SILVER_COIN}</option>
+                        <option value="3">{L_GOLD_COIN}</option>
+                    </select></td>
+                    <td colspan="2" valign="top" class="row2"><input type="radio" name="dorw" value="d" checked="checked" />
+                        <span class="genmed">{L_MONEY_S}</span>
+                        <input type="radio" name="dorw" value="w" />
+                        <span class="genmed">{L_MONEY_D}</span></td>
+                    <td width="15%" class="row2"><input class="btnlite" type="submit" value="{L_SUBMIT_SAVE}" /></td>
+                  </form></tr>
+                
+                <form method="post" action="{S_SAVE_ACTION}">
+                  <input type="hidden" name="do" value="send">
+                  <tr>
+                    <td class="row1"><b class="genmed">{L_SEND_ON_TITLE}:</b><br />
+                    </td>
+                    <td class="row2"><input name="send_money" type="text" class="post" id="send_money" style="width: 70px" size="10" maxlength="10" />
+                    </td>
+                    <td valign="middle" class="row2"><select name="coin_type" id="coin_type">
+                        <option value="0">{L_SELECT_COIN}</option>
+                        <option value="1">{L_COPPER_COIN}</option>
+                        <option value="2">{L_SILVER_COIN}</option>
+                        <option value="3">{L_GOLD_COIN}</option>
+                    </select></td>
+                    <td colspan="2" valign="middle" class="row2"><input name="send_user" type="text" class="post" id="send_user" value="{L_TO_USER}"  style="width: 102px" size="30" onfocus="if (this.value == '{L_TO_USER}') this.value = '';" />
+                    </td>
+                    <td class="row2" valign="middle"><input class="btnlite" type="submit" value="{L_SUBMIT_SEND}" /></td>
+                  </tr>
+                </form>
+                <form method="post" action="{S_SAVE_ACTION}">
+                  <input type="hidden" name="do" value="exchange">
+                  <tr>
+                    <td height="21" class="row1"><b class="genmed">{L_EXCHANGE_TITLE}:</b></td>
+                    <td height="21" class="row2"><input name="exchange_money" type="text" class="post" id="exchange_money" style="width: 70px" size="10" maxlength="10" /></td>
+                    <td height="21" class="row2"><select name="from_type" id="from_type">
+                        <option value="0">{L_SELECT_COIN}</option>
+                        <option value="1">{L_COPPER_COIN}</option>
+                        <option value="2">{L_SILVER_COIN}</option>
+                        <option value="3">{L_GOLD_COIN}</option>
+                      </select>
+                    </td>
+                    <td width="8%" height="21" align="center" class="row2"><span class="genmed">{L_TO_TITLE}</span></td>
+                    <td width="15%" class="row2"><select name="to_type" id="from_type">
+                        <option value="0">{L_SELECT_COIN}</option>
+                        <option value="1">{L_COPPER_COIN}</option>
+                        <option value="2">{L_SILVER_COIN}</option>
+                        <option value="3">{L_GOLD_COIN}</option>
+                    </select></td>
+                    <td height="21" class="row2"><input class="btnlite" type="submit" value="{L_SUBMIT_EXCHANGE}" />
+                    </td>
+                  </tr>
+                </form>
+              </table></td>
+            </tr>
+      </table>
+		<br clear="all" />
+		<table width="100%"  border="0" cellspacing="2" cellpadding="2">
+            <tr>
+              <td align="left" valign="top">
+			  <table width="100%" height="100%" cellspacing="1" class="tablebg">
+                <tr>
+                  <th>{L_BANK_EXCHANGE_DESC}</th>
+                </tr>
+                <tr>
+                  <td height="100%" class="row1"><span class="genmed">{L_BANK_EXCHANGE_C}</span></td>
+                </tr>
+              </table>
+			  <br clear="all" />
+			  <table width="100%" height="100%" cellspacing="1" class="tablebg">
+                <tr>
+                  <th>{L_BANK_LOAN_DESC}</th>
+                </tr>
+                <tr>
+                  <td height="100%" class="row1"><span class="genmed">{L_BANK_LOAN_C}</span></td>
+                </tr>
+              </table>
+			  <br clear="all" />
+			  <table width="100%" height="100%" cellspacing="1" class="tablebg">
+                <tr>
+                  <th>{L_BANK_VIREMENT_DESC}</th>
+                </tr>
+                <tr>
+                  <td height="100%" class="row1"><span class="genmed">{L_BANK_VIREMENT_C}</span></td>
+                </tr>
+              </table>
+			  </td>
+              <td align="left" valign="top"><table class="tablebg" width="100%" cellspacing="1">
+                <tr>
+                  <th colspan="3" align="center">{L_BANK_LOG_TITLE}</th>
+                </tr>
+                <tr>
+                  <td class="row1" colspan="4" align="left"><span class="genmed">{CLEAR_LOG}</span></td>
+                </tr>
+                <!-- BEGIN b_log -->
+                <tr>
+                  <td width="26%" height="18" align="center" class="row1"><span class="genmed">{b_log.LOG_DATE}</span></td>
+                  <td width="12%" align="center" class="row2"><span class="genmed">{b_log.LOGTYPE}</span></td>
+                  <td width="62%" align="center" class="row1"><span class="genmed">{b_log.LOGTITLE}</span></td>
+                </tr>
+                 <!-- END b_log -->
+                            </table></td>
+            </tr>
+      </table>
+	</div>
+
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+		<tr>
+			<td class="row1">
+				<p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a></p>
+				<p class="datetime">{S_TIMEZONE}</p>
+			</td>
+		</tr>
+	</table>
+
+	<br clear="all" />
+
+<!-- INCLUDE overalllit_footer.html -->

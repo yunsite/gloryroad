@@ -1,0 +1,11 @@
+Subject: 有待处理的申请等您批准
+Charset: utf-8
+
+{USERNAME} 您好,
+
+有一个会员提出申请加入你在"{SITENAME}"所管理的"{GROUP_NAME}"群组.
+请利用以下连结作出批准或是驳回申请的决定:
+
+{U_PENDING}
+
+{EMAIL_SIG}

@@ -1,0 +1,84 @@
+<!-- INCLUDE overall_header.html -->
+
+	<!-- $Id: index_body.html,v 1.14 2006/03/12 23:19:54 acydburn Exp $ -->
+<script language="javascript" type="text/javascript" src="{T_TEMPLATE_PATH}/globals.js"></script>
+<span id="bxDlg_bg" style="visibility:hidden;width:100%;position:absolute;left:0;top:0">
+<script language="javascript" type="text/javascript">
+if(!isIE)
+	document.write("<div id=bxDlg_bg1 style=visibility:hidden;height:100%;background:url({T_THEME_PATH}/images/alpha_3.png)><div id=bxDlg_bg2 style=visibility:hidden;height:100%;background:url({T_THEME_PATH}/images/alpha_3.png)><div id=bxDlg_bg3 style=visibility:hidden;height:100%;background:url({T_THEME_PATH}/images/alpha_3.png)><div id=bxDlg_bg4 style=visibility:hidden;height:100%;background:url({T_THEME_PATH}/images/alpha_3.png)><div id=bxDlg_bg5 style=visibility:hidden;height:100%;background:url({T_THEME_PATH}/images/alpha_3.png)></div></div></div></div></div>")
+</script>
+</span>
+<span id=bxDlg align=left  style="visibility:hidden;position:absolute;top:0;background:url({T_THEME_PATH}/images/dlg_head_bg.gif) white repeat-x;width:300;height:160;overflow:hidden;border:1px solid #E39C21"></span>
+{M_XAJAX}
+	<!-- IF U_MCP -->
+	<div id="pageheader">
+		<p class="linkmcp">[ <a href="{U_MCP}">{L_MCP}</a> ]</p>
+	</div>
+
+	<br clear="all" /><br />
+	<!-- ENDIF -->
+
+	
+	    <table width="100%" cellspacing="1" cellpadding="0">
+      <tr>
+        <td width="240" height="181" align="left" valign="top">
+		<table width="240" border="0" cellspacing="1" cellpadding="0" class="tablebg">
+  <tr>
+    <td align="left" class="row1"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><input name="do_mime" type="button" id="do_mime" value=" 开 矿 " onclick="ajax_addEvent(1); return false;" /></td>
+        <td><input name="do_mime2" type="button" id="do_mime2" value=" 狩 猎 " onclick="ajax_addEvent(3); return false;" /></td>
+      </tr>
+    </table></td>
+    </tr>
+</table>
+<br clear="all" />
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablebg">
+          <tr>
+            <td>
+            <input type="submit" name="Submit" value="修建至史坎布雷的道路" /></td>
+          </tr>
+          <tr>
+            <td>道路等级:2 修建日期:</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table></td>
+		 <td>
+		
+		</td>
+      </tr>
+    </table>
+    <br clear="all" />
+
+	<br clear="all" />
+
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+		<tr>
+			<td class="row1">
+				<p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a></p>
+				<p class="datetime">{S_TIMEZONE}</p>
+			</td>
+		</tr>
+	</table>
+
+    <br clear="all" />
+    <!-- IF not S_USER_LOGGED_IN -->
+
+
+	<form method="post" action="{S_LOGIN_ACTION}"><table class="tablebg" width="100%" cellspacing="1">
+		<tr>
+			<td class="cat"><h4><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></h4></td>
+		</tr>
+		<tr>
+			<td class="row1" align="center"><span class="genmed">{L_USERNAME}:</span> <input class="post" type="text" name="username" size="10" />&nbsp; <span class="gensmall">{L_PASSWORD}:</span> <input class="post" type="password" name="password" size="10" />&nbsp; <span class="gensmall">{L_LOG_ME_IN}</span> <input class="text" type="checkbox" name="autologin" />&nbsp; <input type="submit" class="btnmain" name="login" value="{L_LOGIN}" /></td>
+		</tr>
+	</table></form>
+	<!-- ENDIF -->
+
+	<br clear="all" />
+
+
+
+<!-- INCLUDE overall_footer.html -->

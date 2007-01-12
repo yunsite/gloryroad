@@ -1,0 +1,67 @@
+<?php
+if (empty($lang) || !is_array($lang))
+{
+	$lang = array();
+}
+$lang += array(
+	'BANK'                  => '银行',
+	'BANK_MAIN'			    => '银行大厅',
+	'BANK_SAVE_DESC'		=> '储蓄业务说明',
+	'SAVE_DESC_C'			=> '新用户开户费 50 铜币。<br />转帐收取转帐金额的50%。<br />利息支付以铜币为货币单位。<br />',
+	'BANK_VIREMENT_DESC'	=> '转账业务说明',
+	'BANK_VIREMENT_C'		=> '暂未开通.',
+	'SAVE_MONEY_TITLE'      => '存取金额',
+	'BANK_USER_MESSAGE'		=> '客户银行账户信息',
+	'INTEREST_RATE'         => '当前日利率',
+	'MONEY_S'		        => '存款',
+	'MONEY_D'		        => '取款',
+	'SUBMIT_SAVE'		    => '确认存取',
+	'BANK_TITLE'			=> 'All available',
+	'SEND_ON_TITLE'         => '转帐金额',
+	'EXCHANGE_TITLE'        => '兑换金额',
+	'SUBMIT_EXCHANGE'		=> '确认兑换',
+
+	'TO_TITLE'              => '兑换', 
+	'SELECT_COIN'           => '选择货币',
+	'COPPER_COIN'           => '铜币',
+	'SILVER_COIN'           => '银币',
+	'GOLD_COIN'             => '金币',
+	'SUBMIT_SEND'		    => '确认转账',
+	'NO_ACCOUNT'            => '您尚未开户，马上开户？',
+	'BANK_MONEY'            =>'您的银行账户现有:',
+	'WELCOME_U'             =>'欢迎光临城市银行！',
+	'USER_MESSAGE'          =>'用户携带货币信息',
+	'TO_USER'				=>'收款方用户名',
+	'NOT_RIGHT_NUMBER'		=>'您输入了错误的货币数量,必须为大于0的数量。',
+	'NOT_SELECT_COIN'		=>'您没有选择货币种类，请选择要存取的货币类型。',
+	'NOT_SEND_COIN'		    =>'您没有选择货币种类，请选择要转账的货币类型。',
+	'NOT_FROM_COIN'		    =>'您没有选择需要兑换的货币种类，请选择要兑换的货币类型。',
+	'NOT_TO_COIN'		    =>'您没有选择兑换成的货币种类，请选择要兑换的货币类型。',
+	'NOT_MEMBER_ACCOUNT'	=>'您尚未开户，请返回后先开户，开户金额为 50 铜币。',
+	'NOT_BANK_ENOUGH_MONEY' =>'您的银行帐户没有足够的钱币取出，请返回重新输入。',
+	'NOT_USER_ACCOUNT'      =>'该用户并未开设银行帐户，无法转账。',
+	'NOT_SAME_COIN'         =>'同等货币间无法进行兑换。',
+	'NOT_RIGHT_MEMBER'      =>'该用户并不存在，请确认用户名称。',
+	'EMPTY_USERNAME'        =>'收款方用户名不能为空。',
+	'NOT_ENOUGH_MONEY'      =>'您没有足够的钱币存进银行，请返回重新输入。',
+	'NOT_ENOUGH_MONEY_EX'   =>'您没有足够的钱币进行兑换，请返回重新输入。',
+	'SUCCEED_SAVE'          =>'恭喜您，操作成功。',
+	'SUCCEED_SAVE_C'        =>'您存入银行 %d 枚',
+	'SUCCEED_SEND_C'        =>'您从银行取出 %d 枚',
+	'SUCCEED_EXCHANGE'      =>'成功将 %d 枚',
+	'EXCHANGE_MONEY'        =>'兑换 %d 枚',
+	'ACCOUNT_COIN'          =>'结算货币为%s',
+	'LOG_TO_USER_MONEY'     =>'成功将 %d 枚',
+	'LOG_FROM_USER_MONEY'   =>'用户<a href="memberlist.php?sid=&mode=viewprofile&u=%s" target="_blank">',
+	'TO_USER_INFO'          =>'转给 <a href="memberlist.php?sid=&mode=viewprofile&u=%s" target="_blank">',
+	'BANK_COST'             =>'银行收取 %d 铜币手续费',
+	'BANK_LOG_TITLE'        =>'银行交易记录',
+	'CLEAR_LOG'             =>'清空银行交易记录',
+	'BANK_LOAN_DESC'        =>'贷款业务说明',
+	'BANK_LOAN_C'			=>'暂未开通。',
+	'BANK_EXCHANGE_DESC'	=>'货币兑换业务说明',
+	'BANK_EXCHANGE_C'		=>''
+
+
+);
+?>

@@ -1,0 +1,91 @@
+<SCRIPT LANGUAGE="Javascript">
+
+	function showgoodsinfo(evt,gid){
+		if(evt == null)
+				evt = window.event; // For IE
+		var elm = evt.srcElement? evt.srcElement : evt.target;  // IE使用srcElement, 而Firefox使用target
+
+  		var tempx = evt.clientX + document.documentElement.scrollLeft;
+  		var tempy = evt.clientY + document.documentElement.scrollTop;
+		document.getElementById(gid).style.left = tempx+"px";
+		
+		document.getElementById(gid).style.top = tempy+"px";
+
+		document.getElementById(gid).style.visibility = "visible"; 
+	}
+	function hidegoodsinfo(gid){
+		document.getElementById(gid).style.visibility = "hidden"; 
+
+	}
+</SCRIPT>
+					
+<h2>{V_SHOP_NAME}{L_GOODS_STOCK_LIST}</h2>
+<table cellspacing="1">
+	<col class="col1" /><col class="col2" /><col class="col1" /><col class="col2" />
+	<thead>
+		<tr>
+			<th width="17%" colspan="2">{L_GOOD_NAME}</th>
+			<th width="19%">{L_GOOD_STOCK_PRICE}</th>
+			<th width="6%">{L_GOOD_WEIGHT}</th>
+			<th width="26%">{L_GOOD_STOCK_INFO}</th>
+			<th>{L_HANDLE}</th>
+		</tr>
+	</thead>
+	<tbody>
+	<!-- BEGIN sell_goods_list -->
+		<tr>
+			<td width="34" align="center" valign="middle"><img src="images/rpg/object/{V_SHOP_TYPE_IMG}/{sell_goods_list.GOODS_ID}.gif" width="34" height="34" onmouseover="showgoodsinfo(event,{sell_goods_list.RECORD_ID})" onmouseout="hidegoodsinfo({sell_goods_list.RECORD_ID})" id="im_{sell_goods_list.RECORD_ID}" /></td>
+			<td>{sell_goods_list.GOODS_NAME}</td>
+			<td align="right"><span style="cursor:pointer" title="{L_GOOD_PRICE}:{sell_goods_list.STR_PRICE}"><img src="images/rpg/object/g_money_icon.gif" width="11" height="11" />&nbsp;<b>{sell_goods_list.GOODS_UNIT_GPRICE}</b>&nbsp;&nbsp;<img src="images/rpg/object/s_money_icon.gif" width="11" height="11" />&nbsp;<b>{sell_goods_list.GOODS_UNIT_SPRICE}</b>&nbsp;&nbsp;<img src="images/rpg/object/c_money_icon.gif" width="11" height="11" />&nbsp;<b>{sell_goods_list.GOODS_UNIT_CPRICE}</b>&nbsp;&nbsp;</span></td>
+			<td>{sell_goods_list.GOODS_WEIGHT}</td>
+			<td>{L_ALLOW_GOODS}:{sell_goods_list.REMAINS}</td>
+			
+			<td>
+			
+			<!-- IF sell_goods_list.S_BUY_FLAG -->
+			<form action="shop.php" method="post">
+			{L_SALE}{L_NUM}:
+		    <input name="gnum" id="gnum" type="text" size="6" maxlength="10" />
+		    <input type="submit"  name="buy" value="{L_SALE}" style="cursor:pointer" />
+			<input name="mode" type="hidden" value="stock" /><input name="i" type="hidden" value="2" />
+			<input name="goodid" type="hidden" value="{sell_goods_list.GOODS_ID}" />
+			<input name="shopid" type="hidden" value="{V_SHOP_ID}" />
+			</form>
+			<!-- ELSE -->
+			{L_ALL_GOODS_OVER}
+		    
+			<!-- ENDIF --> 
+			
+			</td>
+		</tr>
+	<!-- END sell_goods_list -->
+	</tbody>
+</table>
+<!-- BEGIN sell_goods_list -->
+			<div class="goods_info" id="{sell_goods_list.RECORD_ID}">
+<div id="img1">
+<img src="images/rpg/object/{V_SHOP_TYPE_IMG}/{sell_goods_list.GOODS_ID}.gif" width="34" height="34" />
+</div>
+<div id="title">
+<h4>{sell_goods_list.GOODS_NAME}</h4>
+{L_GOOD_WEIGHT}:{sell_goods_list.GOODS_WEIGHT}
+</div>
+<div id="content">
+{sell_goods_list.GOODS_DESC}
+</div>
+<!-- IF sell_goods_list.EFFECT1NAME -->
+<div id="effect">
+<b>{sell_goods_list.EFFECT1NAME}</b>
+</div>
+<!-- ENDIF -->
+<!-- IF sell_goods_list.EFFECT2NAME -->
+<div id="effect">
+<b>{sell_goods_list.EFFECT2NAME}</b>
+</div>
+<!-- ENDIF -->
+
+</div>
+<!-- END sell_goods_list -->
+
+
+

@@ -1,0 +1,9 @@
+Subject: 关闭检举 - {POST_SUBJECT}
+Charset: utf-8
+
+{USERNAME} 您好,
+
+这封电子邮件是透过"{SITENAME}"所传送, 因为您在 "{TOPIC_TITLE}" 提出检举文章 "{POST_SUBJECT}" 后版面管理员或系统管理员已处理. 这篇检举已关闭. 如有任何疑问请以个人讯息通知 {CLOSER_NAME}.
+
+
+{EMAIL_SIG}

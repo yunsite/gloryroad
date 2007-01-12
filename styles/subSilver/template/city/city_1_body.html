@@ -1,0 +1,89 @@
+<!-- INCLUDE overall_header.html -->
+
+	<!-- $Id: index_body.html,v 1.14 2006/03/12 23:19:54 acydburn Exp $ -->
+	<!-- IF U_MCP -->
+	<div id="pageheader">
+		<p class="linkmcp">[ <a href="{U_MCP}">{L_MCP}</a> ]</p>
+	</div>
+
+	<br clear="all" /><br />
+	<!-- ENDIF -->
+
+	
+	    <table width="100%" cellspacing="1" cellpadding="0" class="city_main">
+      <tr>
+        <td width="240" height="181" align="left" valign="top">
+		<table width="240" border="0" cellspacing="1" cellpadding="0" class="tablebg">
+  <tr>
+    <td align="left" class="row1"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><input name="do_mime" type="button" id="do_mime" value=" ¿ª ¿ó " style="cursor:pointer" /></td>
+        <td><input name="do_mime2" type="button" id="do_mime2" value=" á÷ ÁÔ " style="cursor:pointer" /></td>
+      </tr>
+    </table></td>
+    </tr>
+</table>
+<!-- BEGIN city_road_list -->
+<br clear="all" />
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" class="tablebg">
+          <tr>
+            <td>
+            <input type="submit" name="Submit" value="{city_road_list.BUILD_TO}" style="cursor:pointer;" /></td>
+          </tr>
+          <tr>
+            <td>{L_ROAD_LEVEL}:{city_road_list.ROAD_LEVEL} <br />{L_BUILD_DATE}:{city_road_list.ROAD_DATE}</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+<!-- END sell_goods_list -->
+		
+		
+		</td>
+	    <td align="left" valign="top">
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+		<tr>
+			<td class="row1">
+				<p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a><!-- BEGIN navlinks --> &#187; <a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></p>
+				<p class="datetime">{S_TIMEZONE}</p>
+			</td>
+		</tr>
+	</table>
+
+		
+		</td>
+      </tr>
+    </table>
+    <br clear="all" />
+
+	<br clear="all" />
+
+	<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+		<tr>
+			<td class="row1">
+				<p class="breadcrumbs"><a href="{U_INDEX}">{L_INDEX}</a></p>
+				<p class="datetime">{S_TIMEZONE}</p>
+			</td>
+		</tr>
+	</table>
+
+    <br clear="all" />
+    <!-- IF not S_USER_LOGGED_IN -->
+
+
+	<form method="post" action="{S_LOGIN_ACTION}"><table class="tablebg" width="100%" cellspacing="1">
+		<tr>
+			<td class="cat"><h4><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></h4></td>
+		</tr>
+		<tr>
+			<td class="row1" align="center"><span class="genmed">{L_USERNAME}:</span> <input class="post" type="text" name="username" size="10" />&nbsp; <span class="gensmall">{L_PASSWORD}:</span> <input class="post" type="password" name="password" size="10" />&nbsp; <span class="gensmall">{L_LOG_ME_IN}</span> <input class="text" type="checkbox" name="autologin" />&nbsp; <input type="submit" class="btnmain" name="login" value="{L_LOGIN}" /></td>
+		</tr>
+	</table></form>
+	<!-- ENDIF -->
+
+	<br clear="all" />
+
+
+
+<!-- INCLUDE overall_footer.html -->

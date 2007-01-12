@@ -1,0 +1,9 @@
+Subject: 删除检举 - {POST_SUBJECT}
+Charset: utf-8
+
+{USERNAME} 您好,
+
+这封电子邮件是透过"{SITENAME}"所传送, 因为您在 "{TOPIC_TITLE}" 提出检举文章 "{POST_SUBJECT}" 已被版面管理员或系统管理员删除.
+
+
+{EMAIL_SIG}
