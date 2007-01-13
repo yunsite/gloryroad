@@ -23,8 +23,9 @@ define('SHOP_GOODS_LIST', $table_prefix.'shop_goods');
 define('SHOP_LOG', $table_prefix.'shop_log');
 define('SHOP_STORAGE', $table_prefix.'shop_storage');
 define('SYSTEM_OBJECT', $table_prefix.'system_object');
-
 define('SYSTEM_EXP', $table_prefix.'exp');
+define('BANK_TABLE', $table_prefix.'city_bank');
+define('BANK_LOG', $table_prefix.'city_bank_log');
 
 
 

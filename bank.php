@@ -22,12 +22,12 @@ define('IN_PHPBB', true);
 $phpbb_root_path = './';
 $phpEx = substr(strrchr(__FILE__, '.'), 1);
 include($phpbb_root_path . 'common.'.$phpEx);
+
+include($phpbb_root_path . 'includes/common_rpg_db.'.$phpEx);
 include($phpbb_root_path . 'includes/bank_confg.'.$phpEx);
 
 //table
-define('BANK_TABLE', $table_prefix.'city_bank');
-define('BANK_LOG', $table_prefix.'city_bank_log');
-define('USERS_INFO', $table_prefix.'users_info');
+
 
 // Start session management
 $user->session_begin();
@@ -155,7 +155,7 @@ switch ($do){
 			//´æ¿î²Ù×÷
 			if($dorw=='d'){
 				$db->sql_transaction('begin');
-					$sql='UPDATE ' . USERS_INFO . ' SET ' . $table_col . '=' . $table_col . '-'. $save_money . ' 
+					$sql='UPDATE ' . USER_INFO . ' SET ' . $table_col . '=' . $table_col . '-'. $save_money . ' 
 						WHERE user_id=' . $user->data['user_id'];
 						
 					$db->sql_query($sql);
@@ -174,7 +174,7 @@ switch ($do){
 					$sql='UPDATE ' . BANK_TABLE . ' SET ' . $table_col . '=' . $table_col . '-'. $save_money . '
 						WHERE user_id=' . $user->data['user_id'];
 					$db->sql_query($sql);
-					$sql='UPDATE ' . USERS_INFO . ' SET ' . $table_col . '=' . $table_col . '+'. $save_money . '
+					$sql='UPDATE ' . USER_INFO . ' SET ' . $table_col . '=' . $table_col . '+'. $save_money . '
 						WHERE user_id=' . $user->data['user_id'];
 					$db->sql_query($sql);
 				$db->sql_transaction('commit');
@@ -251,7 +251,7 @@ switch ($do){
 				trigger_error($user->lang['NOT_RIGHT_NUMBER']);
 			}
 			$sql = 'SELECT users.username,bank.user_id  
-			FROM ' . USERS_INFO .' users
+			FROM ' . USER_INFO .' users
 			LEFT JOIN ' . BANK_TABLE . " bank ON(users.user_id=bank.user_id)
 			WHERE users.username='".$db->sql_escape($send_user)."'";
 
@@ -332,10 +332,10 @@ switch ($do){
 			
 			$db->sql_transaction('begin');
 					$num = $exchange_money*pow(10,($from_type-$to_type));
-					$sql='UPDATE ' . USERS_INFO . ' SET ' . $table_col . '=' . $table_col . '-'. $exchange_money . '
+					$sql='UPDATE ' . USER_INFO . ' SET ' . $table_col . '=' . $table_col . '-'. $exchange_money . '
 						WHERE user_id=' . $user->data['user_id'];
 					$db->sql_query($sql);
-					$sql='UPDATE ' . USERS_INFO . ' SET ' . $table2_col . '=' . $table2_col . '+'. $num . '
+					$sql='UPDATE ' . USER_INFO . ' SET ' . $table2_col . '=' . $table2_col . '+'. $num . '
 						WHERE user_id=' . $user->data['user_id'];
 					$db->sql_query($sql);
 				$db->sql_transaction('commit');
@@ -343,11 +343,11 @@ switch ($do){
 		}else{
 			$db->sql_transaction('begin');
 					$num =Floor($exchange_money/ pow(10,($to_type-$from_type)));
-					$sql='UPDATE ' . USERS_INFO . ' SET ' . $table_col . '=' . $table_col . '-'. $num*pow(10,($to_type-$from_type)). '
+					$sql='UPDATE ' . USER_INFO . ' SET ' . $table_col . '=' . $table_col . '-'. $num*pow(10,($to_type-$from_type)). '
 						WHERE user_id=' . $user->data['user_id'];
 					$db->sql_query($sql);
 
-					$sql='UPDATE ' . USERS_INFO . ' SET ' . $table2_col . '=' . $table2_col . '+'. $num . '
+					$sql='UPDATE ' . USER_INFO . ' SET ' . $table2_col . '=' . $table2_col . '+'. $num . '
 						WHERE user_id=' . $user->data['user_id'];
 					$db->sql_query($sql);
 
